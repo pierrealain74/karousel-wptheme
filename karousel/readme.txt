@@ -1,5 +1,5 @@
-=== Understrap ===
-Contributors: howarddc
+=== KAROUSEL ===
+Contributors: pierrealainfaure
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready
 Requires at least: 5.0
 Tested up to: 5.7.2
@@ -9,41 +9,24 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-The renowned WordPress starter theme framework that combines Underscores and Bootstrap. Trusted by more than 100,000 developers for building handcrafted, custom WordPress sites.
+This wordpress theme is base on Understrap Theme.
 
-Website: [https://understrap.com](https://understrap.com)
+Child Theme Project: soon available
 
-Child Theme Project: [https://github.com/understrap/understrap-child](https://github.com/understrap/understrap-child)
 
-== Installation ==
-
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Understrap in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Do not edit the theme files directly. We recommend creating a child theme for custom development. Full developer documentation: [https://docs.understrap.com/](https://docs.understrap.com/)
 
 == Privacy ==
 
-Understrap does not collect any user data and does not use cookies.
+Karousel does not collect any user data and does not use cookies.
 
-== Changelog ==
-
-See https://github.com/understrap/understrap/blob/main/.github/CHANGELOG.md
 
 == Copyright ==
+
+Only check about Understrap:
 
 Understrap WordPress Theme, 2021 Howard Development & Consulting, LLC
 Understrap is distributed under the terms of the GNU GPL.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 

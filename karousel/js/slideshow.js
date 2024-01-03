@@ -20,10 +20,15 @@ function createCarousel(postsData) {
   const title = document.querySelector('.title');
   title.textContent = postsData[0].title;
 
-  const categoriesElt = document.querySelector('.categories');
+  const categoriesElt = document.querySelector('.categories-wrapper');
   let categoryTab = postsData[0].category;
-  categoriesElt.textContent = categoryTab.join(', ');
-  //console.log('categories : ', categorie);
+  //categoriesElt.textContent = categoryTab.join(', ');
+  categoryTab.map(category => {//prend chaque catégorie et les place dans un <div class="category"
+    let categoryDiv = document.createElement('div');
+    categoryDiv.classList.add('category');
+    categoryDiv.textContent = category;
+    categoriesElt.appendChild(categoryDiv);
+  });
 
   //console.log('1st url : ', postsData[0].featured_media);
   let thumbnail = postsData[0].thumbnail;
@@ -72,7 +77,20 @@ function createCarousel(postsData) {
 
     /**Categorie */
     let categoryTab = postsData[currentSlide].category
-    categoriesElt.textContent = categoryTab.join(', ');
+    categoriesElt.textContent = '';
+    categoryTab.map(category => {//prend chaque catégorie et les place dans un <div class="category"
+      let categoryDiv = document.createElement('div');
+      categoryDiv.classList.add('category');
+      categoryDiv.textContent = category;
+      categoriesElt.appendChild(categoryDiv);
+    });
+
+
+
+
+
+
+
 
     /**Image */
     let thumbnail = postsData[currentSlide].thumbnail;

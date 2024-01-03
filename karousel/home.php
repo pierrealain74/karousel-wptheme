@@ -42,8 +42,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <header id="banner">
 
                     <div class="infos">
+                        <div class="categories-wrapper"></div>
                         <div class="title"></div>
-                        <div class="categories"></div>
+                        <div class="dots"></div>
                     </div>
 
                     <div class="arrow arrow_left">
@@ -53,7 +54,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/icon/arrow_right.png" alt="fleche slide droite">
                     </div>
                     
-                    <div class="dots"></div>
+
 
                 </header>
 
