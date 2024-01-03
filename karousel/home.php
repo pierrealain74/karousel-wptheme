@@ -61,27 +61,39 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <!--Blog and Filter-->
 
 
-                <main class="site-main" id="main">
-
-                    <header class="entry-header"><h1 class="entry-title">Upcoming Events</h1></header>
-                    <div class="bloggerfilter">
-
-                        
-                        <div class="filters"><?php
-                            get_template_part('template-parts/filters_cat');
-                        ?>
+                <main class="site-main row" id="main">
 
 
+
+                        <div class="col-8">
+
+                            <header class="entry-header">
+                                <h1 class="entry-title">Upcoming Events</h1>
+                                <div class="filters">
+                                    <?php
+                                        get_template_part('template-parts/filters_cat');
+                                    ?>  
+                                </div>
+                                
+                            </header>
+                            
+                            <div class="bloggerfilter">
+                                
+                                <div id="blogger"></div>
+
+                            </div>
                         </div>
-                        <div id="blogger"></div>
+                        <div class="col-4">
 
-                    </div>
+                            <?php
+                            //get_template_part( 'global-templates/right-sidebar-check' );
+                            dynamic_sidebar( 'right-sidebar' );
+                            ?>
+                        </div>
+
+
+
                 </main>
-
-                <?php
-            // Do the right sidebar check and close div#primary.
-			//get_template_part( 'global-templates/right-sidebar-check' );
-			?>
         </div>
     </div>
 </div>

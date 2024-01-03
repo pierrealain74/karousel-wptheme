@@ -14,16 +14,15 @@ body{
 
 .entry-header{
     display: flex;
-    justify-content: center;
-    padding: 2rem;
+    justify-content: space-between;
+    padding: 2rem 0;
 }
 .entry-title{
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
     border-bottom: 2px solid #242424;
 }
 .filters{
     display: flex;
-    justify-content: right;
 
 }
 .bloggerfilter{
@@ -219,3 +218,16 @@ Carousel - Print It
 img{
     max-width: unset;
 }
+
+/*
+
+
+
+
+
+*/
+@media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1320px;
+    }
+  }
