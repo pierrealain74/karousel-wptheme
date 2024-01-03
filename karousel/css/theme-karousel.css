@@ -1,0 +1,222 @@
+/*
+Styles CSS définis par paf pour le template Filter
+25/11/2023
+*/
+
+
+/*
+Font Family de pierrealainfaure.com
+*/
+body{
+    font-family: 'Oswald-Medium' !important;
+}
+@font-face {
+    font-family: 'Oswald-Bold';
+    src: url('../fonts/Oswald-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Oswald-Medium';
+    src: url('../fonts/Oswald-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Oswald-Light';
+    src: url('../fonts/Oswald-Light.ttf') format('truetype');
+}
+.entry-header{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+.entry-title{
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #242424;
+}
+.filters{
+    display: flex;
+    justify-content: right;
+
+}
+.bloggerfilter{
+
+}
+#blogger{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 3rem;
+}
+.divImg{
+    padding: 0.5rem;
+}
+.divImg img{
+    object-fit: cover;
+    border-radius: 0.2rem;
+    height: 320px;
+    width: 100%;
+    box-shadow: 0px 0px 1px;
+    padding: .3rem;
+}
+.title-post{
+    font-size: 1.8rem;
+    padding: 2rem;
+    font-family: Oswald-Light;
+}
+
+/*Menu, Header, Logo.. : surcharge */
+.nav-link {
+    color: rgb(255 255 255);
+    font-family: 'Oswald-light';
+    font-size: 1.5rem;
+}
+.bg-primary {
+
+    background-color: rgb(43, 42, 42) !important;
+}
+.navbar-brand{
+    font-family: 'Oswald-Bold';
+    font-size: 2rem;
+}
+#wrapper-footer{
+    background-color: rgb(43, 42, 42) !important;
+    color: rgb(255 255 255);
+}
+
+/*
+Carousel - Print It
+*/
+
+#banner {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+	min-height: 470px;
+	position: relative;
+}
+.banner-img {
+
+	width: 100vw;
+	height: 470px;
+	object-fit: cover;
+	object-position: center;
+	opacity: 1;
+}
+.animate_slider{
+	animation: slider .3s ease-in-out;
+}
+@keyframes slider {
+
+	0%{
+		opacity: .5;
+	}
+	100%{
+		opacity: 1;
+	}
+	
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(30%);
+        opacity: .2;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideinRight {
+    animation: slideInFromRight .5s ease-in-out;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-30%);
+        opacity: .2;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideinLeft {
+    animation: slideInFromLeft .5s ease-in-out;
+}
+
+.infos{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	color: white;
+	text-shadow: 0 0px 9px rgba(0, 0, 0, 0.55);
+    min-width: 850px;
+}
+
+.title{
+
+    font-size: 3.8rem;
+    line-height: 3.2rem;
+}
+.categories{
+    font-size: 2rem;
+}
+#banner .arrow {
+	position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    padding: 0 40px;
+}
+#banner .arrow_left {
+	left: 2%;
+	cursor: pointer;
+}
+#banner .arrow_right {
+	right: 2%;
+	cursor: pointer;
+}
+/* Gestion des points du carrousel */
+.dots {
+	position: absolute;
+	bottom: 40px;
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.dot {
+	margin-inline: 5px;
+	width: 1rem;
+	height: 1rem;
+	background-color: #b3b3ab;
+	border: 3px solid #fff;
+	border-radius: 100%;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.dot:hover{
+    cursor: pointer;
+}
+.dot_selected {
+	background-color: #ebebeb;
+    width: 1.5rem;
+	height: 1.5rem;
+}
+/* Fin du code CSS pour le carousel */
+#banner p {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 900;
+	font-size: 50px;
+	line-height: 66px;
+	color: white;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	text-align: center;
+}
+#banner span {
+	display: block;
+	font-weight: 400;
+	font-size: 30px;
+}
+
+img{
+    max-width: unset;
+}
