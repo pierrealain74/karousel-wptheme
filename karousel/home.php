@@ -86,8 +86,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="col-4">
 
                             <?php
-                            //get_template_part( 'global-templates/right-sidebar-check' );
-                            dynamic_sidebar( 'right-sidebar' );
+                             /*get_template_part( 'global-templates/right-sidebar-check' );
+                            dynamic_sidebar( 'right-sidebar' ); */
+                            echo get_search_form();
                             ?>
                         </div>
 
