@@ -41,6 +41,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                 ?>
                 <header id="banner">
 
+                    <div class="bg-banner"></div>
+
                     <div class="infos">
                         <div class="categories-wrapper"></div>
                         <div class="title"></div>
@@ -84,12 +86,12 @@ $container = get_theme_mod( 'understrap_container_type' );
                             </div>
                         </div>
                         <div class="col-4">
+                            
+                            <div id="search">
+                                <span>Search</span>
+                                <?php echo get_search_form(); ?>
+                            </div>
 
-                            <?php
-                             /*get_template_part( 'global-templates/right-sidebar-check' );
-                            dynamic_sidebar( 'right-sidebar' ); */
-                            echo get_search_form();
-                            ?>
                         </div>
 
 
