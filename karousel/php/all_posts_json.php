@@ -26,11 +26,16 @@ if ($query->have_posts()) {
         // Récupérer la miniature
         $thumbnail = get_the_post_thumbnail_url();
 
+        //Récupérer l'url
+        $post_url = get_permalink();
+
+
         // Ajouter les informations à notre tableau de données
         $data[] = array(
             'title' => get_the_title(),
             'category' => $category_names,
             'thumbnail' => $thumbnail,
+            'url_post' => $post_url
         );
     }
 

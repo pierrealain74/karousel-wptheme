@@ -1,8 +1,10 @@
 //Creer un tableau  des post : title, thumbnail full, cat
 
-
+console.log(all_posts_json);
 
 createCarousel(all_posts_json);
+
+
 
 
 function createCarousel(postsData) {
@@ -16,29 +18,46 @@ function createCarousel(postsData) {
   const arrowRight = document.querySelector('.arrow_right');
   const pDots = document.querySelector('.dots');
 
+  //Build the category url
+  const siteUrlWithHttps = window.location.origin;
+  const siteUrl = window.location.href;
+  const catLink = siteUrl + 'category/';
+  //console.log(catLink);
 
   const title = document.querySelector('.title');
-  title.textContent = postsData[0].title;
+  title.innerHTML = '<a href="' + postsData[0].url_post + '">' + postsData[0].title + '</a>';
 
   const categoriesElt = document.querySelector('.categories-wrapper');
   let categoryTab = postsData[0].category;
   //categoriesElt.textContent = categoryTab.join(', ');
   categoryTab.map(category => {//prend chaque catégorie et les place dans un <div class="category"
     let categoryDiv = document.createElement('div');
+    let ahrefDiv = document.createElement("a");
+    /* ahrefDiv.setAttribute("href", catLink + postsData[0].category); */
     categoryDiv.classList.add('category');
-    categoryDiv.textContent = category;
+    
+    categoryDiv.innerHTML = '<a href="' + catLink + category.replace(/\s+/g, '-') + '">' + category + '</a>';//remplacer les espaces par des tirets
+
     categoriesElt.appendChild(categoryDiv);
+    
   });
 
   //console.log('1st url : ', postsData[0].featured_media);
   let thumbnail = postsData[0].thumbnail;
   //console.log('firstUrl : ', firstUrl);
 
+
+  //Href des images karousel
+  const ahrefImgElt = document.createElement("a");
+  ahrefImgElt.setAttribute("href", postsData[0].url_post);
+
+  //Images karousel
   const imgElt = document.createElement("img");
   imgElt.classList.add('banner-img');
   imgElt.src = thumbnail;
 
-  banner.appendChild(imgElt);
+  ahrefImgElt.appendChild(imgElt);
+  banner.appendChild(ahrefImgElt);
 
   /**Afficher les DOTS*/
 
@@ -68,12 +87,9 @@ function createCarousel(postsData) {
 
 
   function modifySlide() {
-    
-    console.log('currentSlide : ', currentSlide);
 
-      
     /*Title */
-    title.textContent = postsData[currentSlide].title;
+    title.innerHTML = '<a href="'+ postsData[currentSlide].url_post +'">' + postsData[currentSlide].title + '</a>';
 
     /**Categorie */
     let categoryTab = postsData[currentSlide].category
@@ -81,7 +97,7 @@ function createCarousel(postsData) {
     categoryTab.map(category => {//prend chaque catégorie et les place dans un <div class="category"
       let categoryDiv = document.createElement('div');
       categoryDiv.classList.add('category');
-      categoryDiv.textContent = category;
+      categoryDiv.innerHTML = '<a href="'+ catLink + category.replace(/\s+/g, '-') +'">' + category + '</a>';
       categoriesElt.appendChild(categoryDiv);
     });
 

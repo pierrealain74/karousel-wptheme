@@ -27,7 +27,7 @@ function displayPost(cat){
 
     var xhr = new XMLHttpRequest();
 
-    cat === '' ?  xhr.open('GET', '/wp-json/wp/v2/posts?per_page=20') :  xhr.open('GET', '/wp-json/wp/v2/posts?categories=' + cat + '&per_page=20')
+    cat === '' ?  xhr.open('GET', '/wp-json/wp/v2/posts?per_page=20') :  xhr.open('GET', '/wp-json/wp/v2/posts?categories=' + cat + '&per_page=20')//if no category selected, get all post of all categories
    
 
         //xhr.onload = async function() {
@@ -63,13 +63,32 @@ function displayPost(cat){
                     const imgElt = document.createElement('img');
                     imgElt.src = featuredMediaUrl;
 
+                    const linkImgElt = document.createElement("a");
+                    linkImgElt.setAttribute("href", post.link);
+
                     const titleH3 = document.createElement("h3");
                     titleH3.classList.add("title-post", "text-center");
-                    titleH3.textContent = post.title.rendered;
+                    titleH3.innerHTML = '<a href="' + post.link + '">' + post.title.rendered + '</a>';
+                    
+                    const exerptH2 = document.createElement("h2");
+                    //const excerptSliced = excerpt.slice(0,50)
+                    exerptH2.innerHTML = post.excerpt.rendered.split(' ').slice(0, 9).join(' ');
 
-                    divElt.appendChild(imgElt);
+                    const linkBt = document.createElement("a");
+                    linkBt.setAttribute("type", "submit");
+                    linkBt.setAttribute("role", "button");
+                    linkBt.setAttribute("href", post.link);
+                    linkBt.classList.add("btn", "btn-primary", "d-flex", "justify-content-center");
+                    linkBt.innerHTML = '<i class="bi bi-eye"></i>';
+
+                    linkImgElt.appendChild(imgElt);                    
+                    divElt.appendChild(linkImgElt);
                     divElt.appendChild(titleH3);
+                    divElt.appendChild(exerptH2);
+                    divElt.appendChild(linkBt);
                     bloggerElt.appendChild(divElt);
+
+
 
 
 

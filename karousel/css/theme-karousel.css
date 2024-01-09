@@ -13,9 +13,14 @@ body{
     font-family: 'Poppins-Regular';
 }
 
+.wrapper {
+    padding: 0;
+  }
+
 a{
     text-decoration: none;
 }
+
 .entry-header{
     display: flex;
     justify-content: space-between;
@@ -37,6 +42,17 @@ a{
     grid-template-columns: repeat(2, 1fr); 
     gap: 3rem;
 }
+#blogger h2{
+    font-size: 1.2rem;
+    padding: 0 2rem;
+}
+#blogger h2 p:nth-child(2){
+    text-align: center;
+
+}
+#blogger a{
+    color: var(--bs-gray-900);
+}
 .divImg{
     padding: 0.5rem;
 }
@@ -50,8 +66,8 @@ a{
 }
 .title-post{
     font-size: 1.8rem;
-    padding: 2rem;
-    font-family: Poppins-Light;
+    padding: 1.2rem;
+    font-family: Poppins-Black;
 }
 
 /*Menu, Header, Logo.. : surcharge */
@@ -122,6 +138,10 @@ Carousel en home pour le HEADER // affiche les thumb des post concernés
 	object-fit: cover;
 	object-position: center;
 	opacity: 1;
+    
+}
+a > .banner-img{
+    border-radius: 0;
 }
 .animate_slider{
 	animation: slider .3s ease-in-out;
@@ -180,10 +200,11 @@ Carousel en home pour le HEADER // affiche les thumb des post concernés
     padding: 0 5% 2% 5%;
 }
 
-.title{
-	text-shadow: 0 0px 5px rgba(0, 0, 0, 0.55);
+.title a{
+	text-shadow: 0 0px 5px var(--bs-gray-800);
     font-size: 2.5rem;
     line-height: 4.5rem;
+    color: var(--bs-white);
 }
 .categories-wrapper{
 
@@ -250,6 +271,14 @@ Carousel en home pour le HEADER // affiche les thumb des post concernés
 	font-size: 30px;
 }
 
+/* ICONS Boostrap*/
+.bi {
+
+}
+.bi-eye{
+    color: var(--bs-white);
+    font-size: 1.8rem;
+}
 /*
 FIN Carousel en home pour le HEADER // affiche les thumb des post concernés
 */

@@ -11,14 +11,18 @@ get_header();
 
 $container = get_theme_mod( 'understrap_container_type' );
 
-/* Creation tableau Json tous les POST */
-/* include(get_stylesheet_directory_uri() . '/php/all_post_json.php'); */
+/**
+ * Le tableau JSON des post est créé dans functions qui appele php/all_posts_json
+ */
 ?>
 
 <!--Fin Rajout des css OWL-->
 
 <script>const themeDirectoryUri = "<?php echo get_stylesheet_directory_uri(); ?>";</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
 
 
 
