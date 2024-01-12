@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const posts = posts4FirstItems;
 
-    
-
 
 
     displayPost(posts);
@@ -31,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   
-     //Select category  
+     //Select category recupere la catégorie et crée un nouveau JSON all_posts, lance displayPost()
     categorySelect.addEventListener("change", function() {
 
         //console.log('categorySelect : ', categorySelect);
@@ -66,54 +64,57 @@ function displayPost(arrayPosts) {
 
 
 
-                arrayPosts.forEach(async(post) => {
-
-
-                    var thumbnailUrl = post.thumbnail;
-
-                    /* Templating */
-
-                    const divElt = document.createElement('div');
-                    divElt.classList.add('divImg');
-
-                    const imgElt = document.createElement('img');
-                    imgElt.src = thumbnailUrl;
-
-                    const linkImgElt = document.createElement("a");
-                    linkImgElt.setAttribute("href", post.url_post);
-
-                    const titleH3 = document.createElement("h3");
-                    titleH3.classList.add("title-post", "text-center");
-                    titleH3.innerHTML = '<a href="' + post.url_post + '">' + post.title + '</a>';
-
-
-
-                    const exerptH2 = document.createElement("h2");
-                    //const excerptSliced = excerpt.slice(0,50)
-                    exerptH2.innerHTML = post.excerpt.split(' ').slice(0, 9).join(' ');
-
-    
-                    const linkBt = document.createElement("a");
-                    linkBt.setAttribute("type", "submit");
-                    linkBt.setAttribute("role", "button");
-                    linkBt.setAttribute("href", post.url_post);
-                    linkBt.classList.add("btn", "btn-primary", "d-flex", "justify-content-center");
-                    linkBt.innerHTML = '<i class="bi bi-eye"></i>';
-
-                    linkImgElt.appendChild(imgElt);                    
-                    divElt.appendChild(linkImgElt);
-                    divElt.appendChild(titleH3);
-                    divElt.appendChild(exerptH2);
-                    divElt.appendChild(linkBt);
+    arrayPosts.forEach(async (post) =>
+    {
                     
-                    bloggerElt.appendChild(divElt);
+
+
+        post.thumbnail === false ? thumbnailUrl = window.location.href + '/wp-content/uploads/2024/01/thumbnail-default.png' : thumbnailUrl = post.thumbnail;
+
+
+        /* Templating */
+
+        const divElt = document.createElement('div');
+        divElt.classList.add('divImg');
+
+        const imgElt = document.createElement('img');
+        imgElt.src = thumbnailUrl;
+
+        const linkImgElt = document.createElement("a");
+        linkImgElt.setAttribute("href", post.url_post);
+
+        const titleH3 = document.createElement("h3");
+        titleH3.classList.add("title-post", "text-center");
+        titleH3.innerHTML = '<a href="' + post.url_post + '">' + post.title + '</a>';
+
+
+
+        const exerptH2 = document.createElement("h2");
+        //const excerptSliced = excerpt.slice(0,50)
+        exerptH2.innerHTML = post.excerpt.split(' ').slice(0, 9).join(' ');
+
+
+        const linkBt = document.createElement("a");
+        linkBt.setAttribute("type", "submit");
+        linkBt.setAttribute("role", "button");
+        linkBt.setAttribute("href", post.url_post);
+        linkBt.classList.add("btn", "btn-primary", "d-flex", "justify-content-center");
+        linkBt.innerHTML = '<i class="bi bi-eye"></i>';
+
+        linkImgElt.appendChild(imgElt);                    
+        divElt.appendChild(linkImgElt);
+        divElt.appendChild(titleH3);
+        divElt.appendChild(exerptH2);
+        divElt.appendChild(linkBt);
+        
+        bloggerElt.appendChild(divElt);
 
 
 
 
 
 
-                })
+    })
 
             
  }    

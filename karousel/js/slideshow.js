@@ -42,10 +42,8 @@ function createCarousel(postsData) {
     
   });
 
-  //console.log('1st url : ', postsData[0].featured_media);
-  let thumbnail = postsData[0].thumbnail;
-  //console.log('firstUrl : ', firstUrl);
-
+  //Tester si un thumbnail existe sinon prendre l'image par defaut
+  postsData[0].thumbnail === false ? thumbnail = window.location.href + '/wp-content/uploads/2024/01/thumbnail-default.png' : thumbnail = postsData[0].thumbnail;
 
   //Href des images karousel
   const ahrefImgElt = document.createElement("a");
@@ -109,7 +107,9 @@ function createCarousel(postsData) {
 
 
     /**Image */
-    let thumbnail = postsData[currentSlide].thumbnail;
+      //Tester si un thumbnail existe sinon prendre l'image par defaut
+    postsData[currentSlide].thumbnail === false ? thumbnail = window.location.href + '/wp-content/uploads/2024/01/thumbnail-default.png' : thumbnail = postsData[currentSlide].thumbnail;
+    //let thumbnail = postsData[currentSlide].thumbnail;
 
     imgElt.classList.remove('animate_slider');
     void imgElt.offsetWidth;
