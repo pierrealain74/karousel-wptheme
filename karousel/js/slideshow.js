@@ -1,6 +1,6 @@
 //Creer un tableau  des post : title, thumbnail full, cat
 
-console.log(all_posts_json);
+//console.log(all_posts_json);
 
 createCarousel(all_posts_json);
 

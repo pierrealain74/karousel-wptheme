@@ -8,6 +8,32 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+
+
+// Ajoute une colonne thumbnail dans l'admin des posts
+function custom_columns_thumbnail($columns) {
+    $columns['thumbnail'] = __('Thumbnail');
+    return $columns;
+}
+
+// Affiche les miniatures dans la colonne ajoutée
+function custom_columns_content($column_name, $post_id) {
+    if ($column_name == 'thumbnail') {
+        $thumbnail = get_the_post_thumbnail($post_id, array(50, 50));
+        echo $thumbnail;
+    }
+}
+
+// Enregistre les actions
+add_filter('manage_posts_columns', 'custom_columns_thumbnail');
+add_action('manage_posts_custom_column', 'custom_columns_content', 10, 2);
+
+
+
+
+
+
+
 // UnderStrap's includes directory.
 $understrap_inc_dir = 'inc';
 

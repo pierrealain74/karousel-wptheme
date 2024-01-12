@@ -36,11 +36,15 @@ a{
 }
 .bloggerfilter{
 
+    text-align: center;
+    margin-bottom: 2rem;
+
 }
 #blogger{
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 3rem;
+    margin: 4rem 0;
 }
 #blogger h2{
     font-size: 1.2rem;
@@ -286,6 +290,20 @@ FIN Carousel en home pour le HEADER // affiche les thumb des post concernés
 img{
     max-width: unset;
 }
+
+/*Footer*/
+.site-footer{
+    padding: 5rem 0;
+    text-align: center;
+}
+.site-footer h4{
+
+    padding: 1rem 0;
+    border-top: 1px solid var(--bs-gray-200);
+    font-size: 1rem;
+}
+
+/*Responsive*/
 
 @media (min-width: 1400px) {
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {

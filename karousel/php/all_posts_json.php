@@ -13,7 +13,9 @@ $data = array();
 
 // Vérifier si des articles ont été trouvés
 if ($query->have_posts()) {
-    while ($query->have_posts()) {
+
+    while ($query->have_posts()) 
+    {
         $query->the_post();
 
         // Récupérer les catégories
@@ -21,7 +23,15 @@ if ($query->have_posts()) {
         $category_names = array();
         foreach ($categories as $category) {
             $category_names[] = $category->name;
+
         }
+
+        $category_id = array();
+        foreach ($categories as $category) {
+            $category_id[] = $category->term_id;
+
+        }
+
 
         // Récupérer la miniature
         $thumbnail = get_the_post_thumbnail_url();
@@ -29,13 +39,17 @@ if ($query->have_posts()) {
         //Récupérer l'url
         $post_url = get_permalink();
 
+        //Recupérer le excerpt
+        $excerpt = get_the_excerpt();
 
         // Ajouter les informations à notre tableau de données
         $data[] = array(
             'title' => get_the_title(),
             'category' => $category_names,
+            'category_id' => $category_id,
             'thumbnail' => $thumbnail,
-            'url_post' => $post_url
+            'url_post' => $post_url,
+            'excerpt' => $excerpt
         );
     }
 
