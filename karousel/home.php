@@ -85,7 +85,10 @@ $container = get_theme_mod( 'understrap_container_type' );
                             
                             <div class="bloggerfilter">
                                 
-                                <div id="blogger"></div>
+                                <div id="blogger">
+                                    
+                                </div>
+                                <div id="loadMoreBtn" class="loadmore btn btn-primary">Load More</div>
 
                             </div>
                         </div>
@@ -117,7 +120,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <script src="<?php echo get_stylesheet_directory_uri() . '/js/slideshow.js' ?>"></script>
 
-<script src="<?php echo get_stylesheet_directory_uri() . '/js/filters.js' ?>"></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/js/posts.js' ?>"></script>
 
 <?php //get_sidebar();?>
 <?php get_footer();?>

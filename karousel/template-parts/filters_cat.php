@@ -12,7 +12,7 @@ function get_all_categories() {
 }
 $all_categories = get_all_categories();
 ?>
-<select name="cat" id="cat-select" class="form-select form-select-lg mb-3 w-100" aria-label="Large select example">
+<select name="cat" id="catSelect" class="form-select form-select-lg mb-3 w-100" aria-label="Large select example">
         <option value="">Toutes les catégories</option>
         <?php
         foreach ($all_categories as $cat_id => $cat_name) {
